@@ -20,7 +20,7 @@ export class OrderEditorComponent {
 
   constructor(
     private readonly dialogRef: MatDialogRef<OrderEditorComponent>,
-    @Inject(MAT_DIALOG_DATA) private data: OrderData
+    @Inject(MAT_DIALOG_DATA) private data: OrderData,
   ) {
     this.dialogTitle = data ? 'Edit Order' : 'Add Order';
     this.buttonText = data ? 'Save' : 'Add';
@@ -28,6 +28,9 @@ export class OrderEditorComponent {
   }
 
   onSubmit(form: NgForm) {
+    if (this.model.price < 0) {
+      form.controls.Price.setErrors({ min: 'Price can not smaller than zero!' });
+    }
     if (form.invalid) {
       return;
     }

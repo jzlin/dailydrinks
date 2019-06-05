@@ -1,11 +1,14 @@
 <h2>{{ dialogTitle }}</h2>
 <form #form="ngForm" (ngSubmit)="onSubmit(form)">
   <mat-form-field>
-    <input type="text" matInput name="Name" placeholder="Name" required [(ngModel)]="model.name">
+    <input type="text" matInput name="Name" placeholder="Name" required [(ngModel)]="model.name" #name="ngModel">
+    <mat-error *ngIf="name.hasError('required')">Name is required!</mat-error>
   </mat-form-field>
 
   <mat-form-field>
-    <input type="number" matInput name="Price" placeholder="Price" required min="0" [(ngModel)]="model.price">
+    <input type="number" matInput name="Price" placeholder="Price" required min="0" step="5" [(ngModel)]="model.price" #price="ngModel">
+    <mat-error *ngIf="price.hasError('required')">Price is required!</mat-error>
+    <mat-error *ngIf="price.hasError('min')">Price can not smaller than zero.</mat-error>
   </mat-form-field>
 
   <mat-form-field>
