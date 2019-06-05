@@ -1,2 +1,20 @@
 <h1>DailyDrinks</h1>
 <hr>
+
+<div class="order-list">
+  <div class="order-item order-item-header">
+    <span class="order-item__name">name</span>
+    <span class="order-item__price">price</span>
+    <span class="order-item__notes">notes</span>
+    <div class="order-item__action"></div>
+  </div>
+  <div class="order-item" *ngFor="let item of orders">
+    <span class="order-item__name">{{ item.name }}</span>
+    <span class="order-item__price">{{ item.price }}</span>
+    <span class="order-item__notes" [innerText]="item.notes"></span>
+    <div class="order-item__action">
+      <button class="button button--edit">edit</button>
+      <button class="button button--delete">delete</button>
+    </div>
+  </div>
+</div>

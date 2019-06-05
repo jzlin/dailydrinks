@@ -1,0 +1,87 @@
+$colorBlue: #4285F4;
+$colorRed: #DB4437;
+$colorYellow: #F4B400;
+$colorGreen: #0F9D58;
+
+.order-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.order-item {
+  display: flex;
+  align-items: flex-start;
+  padding: .5em 1em;
+  line-height: 1.5em;
+  box-sizing: border-box;
+
+  &:nth-child(odd) {
+    background-color: #eee;
+  }
+
+  &:hover {
+    background-color: lighten($colorBlue, 30%);
+  }
+
+  &.order-item-header {
+    font-weight: bold;
+    color: #fff;
+    background-color: $colorYellow;
+  }
+}
+
+.order-item__name {
+  flex: none;
+  width: 25%;
+}
+
+.order-item__price {
+  flex: none;
+  width: 100px;
+  text-align: right;
+}
+
+.order-item__notes {
+  flex-grow: 1;
+  text-align: center;
+}
+
+.order-item__action {
+  flex: none;
+  align-self: center;
+  display: flex;
+  justify-content: space-around;
+  width: 200px;
+}
+
+$button-height: 2.5em;
+
+.button {
+  padding: 0 1.5em;
+  height: $button-height;
+  border: 1px solid #aaa;
+  border-radius: $button-height;
+  font-size: 0.8125rem;
+  color: #fff;
+  box-shadow: 1px 1px 1px 0 rgba(#000, .1);
+  opacity: .7;
+  cursor: pointer;
+
+  &.button--edit {
+    background-color: $colorGreen;
+  }
+
+  &.button--delete {
+    background-color: $colorRed;
+  }
+
+  &:focus,
+  &:hover {
+    opacity: 1;
+    box-shadow: 1px 1px 2px 0 rgba(#000, .2);
+  }
+
+  &:active {
+    box-shadow: 1px 1px 1px 0 rgba(#000, .2) inset;
+  }
+}
