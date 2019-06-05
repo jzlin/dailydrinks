@@ -34,6 +34,12 @@ export class AppComponent {
     },
   ];
 
+  get totalPrice() {
+    return this.orders
+      .map(x => x.price)
+      .reduce((previouseValue, currentValue) => previouseValue + currentValue, 0);
+  }
+
   constructor(private readonly dialog: MatDialog) { }
 
   displayOrderDialog(item?: OrderData) {
