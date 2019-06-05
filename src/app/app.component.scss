@@ -41,18 +41,21 @@
 
 .order-item__name {
   flex: none;
-  width: 25%;
+  width: 20%;
+  word-break: break-word;
 }
 
 .order-item__price {
   flex: none;
-  width: 100px;
+  width: 20%;
   text-align: right;
 }
 
 .order-item__notes {
   flex-grow: 1;
   text-align: center;
+  min-width: 20%;
+  word-break: break-word;
 }
 
 .order-item__action {
@@ -61,4 +64,12 @@
   display: flex;
   justify-content: space-around;
   width: 180px;
+}
+
+@media only screen and (max-width: 600px) {
+  .order-item__action {
+    flex-direction: column;
+    width: 20%;
+    min-width: 80px;
+  }
 }
