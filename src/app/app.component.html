@@ -14,7 +14,7 @@
   </div>
   <div class="order-item" *ngFor="let item of orders">
     <span class="order-item__name">{{ item.name }}</span>
-    <span class="order-item__price">{{ item.price }}</span>
+    <span class="order-item__price">{{ item.price | currency:undefined:'symbol':'1.0-2' }}</span>
     <span class="order-item__notes" [innerText]="item.notes || ''"></span>
     <div class="order-item__action">
       <button class="button button--green"
@@ -25,7 +25,7 @@
   </div>
   <div class="order-item order-item-summary">
     <span class="order-item__name">total</span>
-    <span class="order-item__price">{{ totalPrice }}</span>
+    <span class="order-item__price">{{ totalPrice | currency:undefined:'symbol':'1.0-2' }}</span>
     <span class="order-item__notes"></span>
     <div class="order-item__action"></div>
   </div>
