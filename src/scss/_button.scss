@@ -1,0 +1,44 @@
+@import './variables';
+
+$button-height: 2.5em;
+
+.button {
+  margin: 5px;
+  padding: 0 1.5em;
+  height: $button-height;
+  border: 1px solid #aaa;
+  border-radius: $button-height;
+  font-size: 0.8125rem;
+  box-shadow: 1px 1px 1px 0 rgba(#000, .1);
+  opacity: .7;
+  outline: none;
+  cursor: pointer;
+
+  &.button--green,
+  &.button--red,
+  &.button--blue {
+    color: #fff;
+  }
+
+  &.button--green {
+    background-color: $colorGreen;
+  }
+
+  &.button--red {
+    background-color: $colorRed;
+  }
+
+  &.button--blue {
+    background-color: $colorBlue;
+  }
+
+  &:focus,
+  &:hover {
+    opacity: 1;
+    box-shadow: 1px 1px 2px 0 rgba(#000, .2);
+  }
+
+  &:active {
+    box-shadow: 1px 1px 1px 0 rgba(#000, .2) inset;
+  }
+}

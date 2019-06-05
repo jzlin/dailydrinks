@@ -1,7 +1,4 @@
-$colorBlue: #4285F4;
-$colorRed: #DB4437;
-$colorYellow: #F4B400;
-$colorGreen: #0F9D58;
+@import '../scss/variables';
 
 .app-header {
   display: flex;
@@ -57,41 +54,4 @@ $colorGreen: #0F9D58;
   align-self: center;
   display: flex;
   justify-content: space-around;
-}
-
-$button-height: 2.5em;
-
-.button {
-  margin: 5px;
-  padding: 0 1.5em;
-  height: $button-height;
-  border: 1px solid #aaa;
-  border-radius: $button-height;
-  font-size: 0.8125rem;
-  color: #fff;
-  box-shadow: 1px 1px 1px 0 rgba(#000, .1);
-  opacity: .7;
-  cursor: pointer;
-
-  &.button--green {
-    background-color: $colorGreen;
-  }
-
-  &.button--red {
-    background-color: $colorRed;
-  }
-
-  &.button--blue {
-    background-color: $colorBlue;
-  }
-
-  &:focus,
-  &:hover {
-    opacity: 1;
-    box-shadow: 1px 1px 2px 0 rgba(#000, .2);
-  }
-
-  &:active {
-    box-shadow: 1px 1px 1px 0 rgba(#000, .2) inset;
-  }
 }
