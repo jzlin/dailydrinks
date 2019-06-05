@@ -1,4 +1,8 @@
-<h1>DailyDrinks</h1>
+<div class="app-header">
+  <h1>DailyDrinks</h1>
+  <button class="button button--blue"
+    (click)="displayOrderDialog()">add</button>
+</div>
 <hr>
 
 <div class="order-list">
@@ -11,10 +15,12 @@
   <div class="order-item" *ngFor="let item of orders">
     <span class="order-item__name">{{ item.name }}</span>
     <span class="order-item__price">{{ item.price }}</span>
-    <span class="order-item__notes" [innerText]="item.notes"></span>
+    <span class="order-item__notes" [innerText]="item.notes || ''"></span>
     <div class="order-item__action">
-      <button class="button button--edit">edit</button>
-      <button class="button button--delete">delete</button>
+      <button class="button button--green"
+        (click)="displayOrderDialog(item)">edit</button>
+      <button class="button button--red"
+        (click)="removeOrder(item)">delete</button>
     </div>
   </div>
 </div>

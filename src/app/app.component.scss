@@ -3,6 +3,12 @@ $colorRed: #DB4437;
 $colorYellow: #F4B400;
 $colorGreen: #0F9D58;
 
+.app-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
 .order-list {
   display: flex;
   flex-direction: column;
@@ -51,12 +57,12 @@ $colorGreen: #0F9D58;
   align-self: center;
   display: flex;
   justify-content: space-around;
-  width: 200px;
 }
 
 $button-height: 2.5em;
 
 .button {
+  margin: 5px;
   padding: 0 1.5em;
   height: $button-height;
   border: 1px solid #aaa;
@@ -67,12 +73,16 @@ $button-height: 2.5em;
   opacity: .7;
   cursor: pointer;
 
-  &.button--edit {
+  &.button--green {
     background-color: $colorGreen;
   }
 
-  &.button--delete {
+  &.button--red {
     background-color: $colorRed;
+  }
+
+  &.button--blue {
+    background-color: $colorBlue;
   }
 
   &:focus,

@@ -1,0 +1,19 @@
+<h2>{{ dialogTitle }}</h2>
+<form #form="ngForm" (ngSubmit)="onSubmit(form)">
+  <mat-form-field>
+    <input type="text" matInput name="Name" placeholder="Name" required [(ngModel)]="model.name">
+  </mat-form-field>
+
+  <mat-form-field>
+    <input type="number" matInput name="Price" placeholder="Price" required min="0" [(ngModel)]="model.price">
+  </mat-form-field>
+
+  <mat-form-field>
+    <textarea matInput name="Notes" placeholder="Notes" [(ngModel)]="model.notes"></textarea>
+  </mat-form-field>
+
+  <div class="button-bar">
+    <button type="button" matDialogClose>cancel</button>
+    <button type="submit">{{ buttonText }}</button>
+  </div>
+</form>
